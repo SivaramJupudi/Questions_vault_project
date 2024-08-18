@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Question Papers</title>
+</head>
+<body>
+<h2>Question Papers</h2>
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Question Paper Name</th>
+        <th>Course Code</th>
+        <th>Exam Name</th>
+        <th>PDF</th>
+        <th>Download</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="questionPaper : ${questionPapers}">
+        <td th:text="${questionPaper.questionPaperName}"></td>
+        <td th:text="${questionPaper.courseCode}"></td>
+        <td th:text="${questionPaper.examName}"></td>
+        <td th:text="${questionPaper.pdf}"></td>
+        <td>
+            <a th:href="@{'/download/' + ${questionPaper.id}}">Download</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

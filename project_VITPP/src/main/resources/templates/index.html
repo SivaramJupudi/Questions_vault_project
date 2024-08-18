@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Question Papers</title>
+</head>
+<body>
+<h2>Question Papers</h2>
+
+<div>
+    <h1>Document Manager</h1>
+</div>
+<div class="text-success">
+    <h3>[[${message}]]</h3>
+</div>
+<form th:action="@{/upload}" method="post"
+      enctype="multipart/form-data"
+>
+    <div class="border rounded m-3">
+        <h2>Upload your file:</h2>
+<!--        <p>-->
+<!--            <input type="text" name="id" placeholder="ID" required/>-->
+<!--        </p>-->
+        <p>
+            <input type="text" name="courseCode" placeholder="Course Code" required/>
+        </p>
+        <form method="post" action="/upload">
+            <label for="examName">Exam Name:</label>
+            <select name="examName" id="examName">
+                <option value="cat1">Cat1</option>
+                <option value="cat2">Cat2</option>
+                <option value="fat">Fat</option>
+            </select>
+            <br>
+            <label for="pdf">PDF:</label>
+            <input type="file" name="pdf" id="pdf" required>
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+        <p>
+            <input type="text" name="questionPaperName" placeholder="question_paper_name" required/>
+        </p>
+
+
+    </div>
+</form>
+</body>
+</html>
